@@ -1,0 +1,50 @@
+1. abilitu to create an account for trading
+2. ability to add cash to count
+3. ability to go and do trading
+
+
+1. abilitu to create an account for trading
+    1. create account database model(add field boolean field if user is blacklisted)
+    2. create a form for form registration/login
+    3. create flask endpoint and add functionality to register new user (could be some additional requarements: must be 21 years old)
+    4. create flask endpoint and aa functionality to login excisting user
+    5. create functionality  to reset users password it is forgotten
+    6. add abillity to log out
+    7. add functionality to amned user details
+    8. create a page fo vieving users balance
+    9. show user information
+    10. show trade history
+
+2. ability to add cash to count
+    1. account_cash_transactions database model table (should contain only cash) relation ship acount one: account_cash_transactions many
+    (Account_id:int, amount:float, creation_date:datetime, status:["Top-up", "buying shares", "selling shares", "withdrawal"])
+    2. form to add cash
+    3. create flask enpoint and add functionality
+
+3. ability to go and do trading
+    1. Find API that gives us stock price
+    2. add a page for getting particular stock price
+    3.create stocks database model (fields: quantity: int, ticker:str, buy_price: float,transaction_type:["Buy", "Sell"], account_id :int,  creation_date, relationship account one to  )
+
+
+backend:
+
+1.create database models
+2.create endpoint "users/:
+    1.POST - create new user
+    2. GET  wit ,id> gets user by id
+    3. GET with <email> gets user by email
+    4. PUT with id updates user information
+    5. DELETE deletes user
+3.  Ability to manipulate cash to account.
+    1. create endpoint "account_cash_transaactions/"
+        1. POST - creates mnnew cash transaction
+        2. GET - with <account id> return all account account_cash_transaactions sort by creatio date: descending
+        3.GET - with <aaccount_id> get users cash balance
+
+4. Ability to go and do something
+    1. create endpoint "stock/"
+    GET <ticker> get ticker current price
+    POST "stoc/sell/<account_id>/<ticker>
+    POST "stock/buy/<account_id>/<ticker>
+
